@@ -1,0 +1,38 @@
+namespace SecurityTest.db;
+
+@OData.publish : true
+context UserData2 {
+
+    entity User2 {
+        key UserId    : Integer;
+            FirstName : String(40);
+            LastName  : String(40);
+            Email     : String(255);
+    }
+
+
+	@Search.searchable							: true
+	@EnterpriseSearch.enabled					: true
+	define view UserData2Search as select from User2 {
+	    @Search.defaultSearchElement            : true
+	    @EnterpriseSearch.key					: true
+	    @EnterpriseSearch.presentationMode		: [ #DETAIL ]
+	    @EnterpriseSearch.usageMode             : [ #AUTO_FACET ]
+	    UserId                               AS UserId,
+	   
+		@Search.defaultSearchElement : true
+		@EnterpriseSearch.presentationMode		: [ #TITLE ]
+		@EnterpriseSearch.usageMode: [ #AUTO_FACET ]
+		"FirstName"                               AS FirstName,
+		
+		@EnterpriseSearch.presentationMode		: [ #DETAIL ]
+		@EnterpriseSearch.usageMode: [ #AUTO_FACET ]
+		"LastName"                               AS LastName,
+		
+		@EnterpriseSearch.presentationMode		: [ #DETAIL ]
+		@EnterpriseSearch.usageMode: [ #AUTO_FACET ]
+		"Email"                               AS Email
+	    
+	};
+	
+};

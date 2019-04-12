@@ -1,0 +1,4 @@
+service {
+	"SecurityTest.db::UserData.User" as "Users"
+	  create using "xsjs:usersCreateMethod.xsjslib::usersCreate";
+}

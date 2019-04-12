@@ -1,0 +1,25 @@
+{
+	"xsappname": "SecurityTest",
+	"tenant-mode": "dedicated",
+
+	"scopes": [{
+		"name": "$XSAPPNAME.read",
+		"description": "Read access to the odata service"
+	}],
+	
+	"attributes": [{
+		"name": "mail",
+		"description": "mail",
+		"valueType": "string"
+	}],
+
+	"role-templates": [{
+		"name": "Viewer",
+		"description": "View Data",
+		"scope-references": [
+			"$XSAPPNAME.read",
+			"uaa.user"
+		],
+		"attribute-references": ["mail"]
+	}]
+}

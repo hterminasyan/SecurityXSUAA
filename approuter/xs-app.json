@@ -1,0 +1,10 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "route",
+	"routes": [{
+		"source": "(.*)(.xsodata)",
+		"destination": "js_be",
+		"authenticationType": "xsuaa",
+		"scope": "$XSAPPNAME.read"
+	}]
+}

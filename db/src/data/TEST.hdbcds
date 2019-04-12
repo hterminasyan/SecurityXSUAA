@@ -1,0 +1,9 @@
+namespace SecurityTest.db;
+
+@OData.publish: true
+context TEST {
+    entity SECURITY {
+        key ID   : Integer;
+            NAME : String(200);
+    }
+};

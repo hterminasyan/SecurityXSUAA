@@ -1,0 +1,16 @@
+{
+  "role":{
+    "name":"SecurityTest.db::SecurityTest",
+    "object_privileges":[
+         {
+        "name":"SecurityTest.db::UserData2.UserData2Search",
+        "type":"VIEW",
+        "privileges":[
+          "SELECT",
+          "INSERT",
+          "DELETE"
+        ]
+      }
+    ]
+  }
+}

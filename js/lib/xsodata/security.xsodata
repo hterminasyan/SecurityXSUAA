@@ -1,0 +1,8 @@
+service  { 
+
+"SecurityTest.db::CV_SECURITY" as "Security" key ("ID")
+ //create events ( before "securityCreate.xsjslib::createMethod" ); //before create operation this exit will be trigger
+  create  
+       using "SecurityTest.js.lib.xsodata:jsexit.xsjslib::create_insert" ;         
+} 
+
